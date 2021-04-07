@@ -1,16 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <a-select style="min-width: 200px" v-model:value="selected">
+    <Option value="1">Test 1</Option>
+    <Option value="2">Test 2</Option>
+  </a-select>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+
+  setup() {
+    const selected = ref("1")
+
+    return {
+      selected
+    }
   }
 });
 </script>
